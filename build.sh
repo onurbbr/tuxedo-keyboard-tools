@@ -10,6 +10,7 @@ mkdir -p ${pkgdir} ${pkgdir}/etc ${pkgdir}/etc/sudoers.d ${pkgdir}/etc/systemd/s
 cp -rf ${srcdir}/DEBIAN ${pkgdir} 
 cp -rf ${srcdir}/idle ${pkgdir}/opt/tuxedo-keyboard-tools
 cp -rf ${srcdir}/idle.sh ${pkgdir}/opt/tuxedo-keyboard-tools
+cp -rf ${srcdir}/keep.sh ${pkgdir}/opt/tuxedo-keyboard-tools
 cp -rf ${srcdir}/tuxedo-keyboard-idle ${pkgdir}/etc/sudoers.d
 cp -rf ${srcdir}/tuxedo-keyboard-keep-light-level.service ${pkgdir}/etc/systemd/system
 cp -rf ${srcdir}/tuxedo-keyboard-idle.service ${pkgdir}/etc/systemd/user
