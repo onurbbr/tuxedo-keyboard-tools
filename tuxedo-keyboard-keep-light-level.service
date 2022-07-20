@@ -1,0 +1,10 @@
+[Unit]
+Description=Keep keyboard light level for TUXEDO Laptops
+DefaultDependencies=no
+Before=shutdown.target reboot.target halt.target
+
+[Service]
+ExecStart=/opt/tuxedo-keyboard-tools/keep.sh
+
+[Install]
+WantedBy=halt.target reboot.target shutdown.target

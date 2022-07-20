@@ -1,0 +1,10 @@
+[Unit]
+Description=TUXEDO Keyboard Idler
+
+[Service]
+Type=simple
+ExecStartPre=/bin/sleep 10
+ExecStart=/bin/sudo /opt/tuxedo-keyboard-tools/idle.sh 0:0:14
+
+[Install]
+WantedBy=default.target
