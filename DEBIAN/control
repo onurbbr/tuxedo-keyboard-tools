@@ -1,0 +1,5 @@
+Package: tuxedo-keyboard-tools
+Version: 1.1
+Architecture: amd64
+Maintainer: Onur BÜBER <onurbuber@engineer.com>
+Description: Keyboard tools for TUXEDO Laptops.
