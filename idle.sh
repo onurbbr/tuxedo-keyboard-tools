@@ -1,10 +1,10 @@
 #!/bin/bash
 
-keyboardbrightness=$(cat /sys/devices/platform/tuxedo_keyboard/uw_kbd_bl_color/brightness)
 if [ "$EUID" -ne 0 ]
   then echo "Please run as root"
   exit
 fi
+keyboardbrightness=$(cat /sys/devices/platform/tuxedo_keyboard/uw_kbd_bl_color/brightness)
 
 set -ue -o pipefail
 safe_source () { [[ ! -z ${1:-} ]] && source $1; _dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"; _sdir=$(dirname "$(readlink -f "$0")"); }; safe_source
