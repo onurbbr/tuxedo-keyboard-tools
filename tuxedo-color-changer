@@ -1,0 +1,14 @@
+#!/bin/bash
+
+if [ "$EUID" -ne 0 ]
+  then echo "Root privilege is required to change color. Please run as root."
+  exit
+else
+  echo "Supported colors are: BLACK, RED, GREEN, BLUE, YELLOW, MAGENTA, CYAN, WHITE"
+  read -p "Enter color for keyboard: " keycolor
+  keycolor=$(echo $keycolor | tr 'a-z' 'A-Z')
+  echo "Changing keyboard color..."
+  echo "options tuxedo-keyboard brightness=200 color=$keycolor" | tee /etc/modprobe.d/tuxedo_keyboard.conf > /dev/null
+  modprobe -r tuxedo_io uniwill_wmi clevo_wmi tuxedo_keyboard
+  modprobe -a tuxedo_io uniwill_wmi clevo_wmi tuxedo_keyboard
+fi
